@@ -58,13 +58,15 @@ if (Meteor.isClient) {
     Accounts.ui.config({
         passwordSignupFields: "USERNAME_ONLY"
     });
+
+    Template.task.helpers({
+        isOwner: function () {
+            return this.owner === Meteor.userId();
+        }
+    });
 }
 
-Template.task.helpers({
-    isOwner: function () {
-        return this.owner === Meteor.userId();
-    }
-});
+
 
 Meteor.methods({
     addTask: function (text) {
