@@ -1,0 +1,11 @@
+<template name="tasks">
+    {{#if Template.subscriptionsReady}}
+        <ul>
+            {{#each tasks}}
+                {{> task}}
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>...загрузка данных</p>
+    {{/if}}
+</template>
